@@ -1,0 +1,34 @@
+﻿@using ProjectCore.Models
+@model List<Staff>
+@{
+	ViewData["Title"] = "Staffs";
+	Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+	<tr>
+		<th>ID</th>
+		<th>Name</th>
+		<th>Surname</th>
+		<th>City</th>
+		<th>Unit</th>
+		<th>Delete</th>
+		<th>Update</th>
+	</tr>
+	@foreach (var x in Model)
+	{
+		<tr>
+			<td>@x.StaffID</td>
+			<td>@x.StaffName</td>
+			<td>@x.StaffSurname</td>
+			<td>@x.StaffCity</td>
+			<td>@x.Unit.UnitName</td>
+			<td><a href="/Depart/DeleteDepartment/@x.StaffID" class="btn btn-danger">DELETE</a></td>
+			<td><a href="/Depart/ReturnDepartment/@x.StaffID" class="btn btn-success">UPDATE</a></td>
+			<td><a href="#" class="btn btn-default" style="background-color:#FCE032">DETAILS</a></td>
+		</tr>
+	}
+</table>
+<a href="/Staff/NewStaff/" class="btn btn-primary">New Staff</a>
+

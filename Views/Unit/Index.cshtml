@@ -1,0 +1,27 @@
+﻿@using ProjectCore.Models
+@model List<Unit>
+@{
+	ViewData["Title"] = "Units";
+	Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+	<tr>
+		<th>ID</th>
+		<th>Unit</th>
+		<th>Delete</th>
+		<th>Update</th>
+		<th>Details</th>
+	</tr>
+	@foreach (var x in Model)
+	{
+		<tr>
+			<td>@x.UnitID</td>
+			<td>@x.UnitName</td>
+			<td><a href="/Unit/DeleteUnit/@x.UnitID" class="btn btn-danger">DELETE</a></td>
+			<td><a href="/Unit/ReturnUnit/@x.UnitID" class="btn btn-success">UPDATE</a></td>
+			<td><a href="/Unit/UnitDetail/@x.UnitID" class="btn btn-default" style="background-color:#FCE032">DETAILS</a></td>
+		</tr>
+	}
+</table>
+<a href="/Unit/NewUnit/" class="btn btn-primary">New Unit</a>

@@ -1,0 +1,17 @@
+﻿@model ProjectCore.Models.Unit
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("UpdateUnit", "Unit", FormMethod.Post))
+{
+	<b>Unit ID</b>
+	@Html.TextBoxFor(x => x.UnitID, new { @class = "form-control" })
+	<br />
+	<b>Unit Name</b>
+	@Html.TextBoxFor(x => x.UnitName, new { @class = "form-control" })
+	<br />
+	<button class="btn btn-default" style="background-color:#ebdede; color:black">Update Unit</button>
+}

@@ -1,0 +1,23 @@
+﻿@model ProjectCore.Models.Staff
+@{
+	ViewData["Title"] = "New Staff";
+	Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<br />
+<form class="form-group" method="post">
+
+	<b>Staff Name</b>
+	@Html.TextBoxFor(x => x.StaffName, new { @class = "form-control" })
+	<br />
+	<b>Staff Surname</b>
+	@Html.TextBoxFor(x => x.StaffSurname, new { @class = "form-control" })
+	<br />
+	<b>Staff City</b>
+	@Html.TextBoxFor(x => x.StaffCity, new { @class = "form-control" })
+	<br />
+	<b>Staff Unit</b>
+	@Html.DropDownListFor(x=> x.Unit.UnitID,(List<SelectListItem>)ViewBag.value, new { @class = "form-control"})
+	<br />
+	<button class="btn btn-info">Add Staff</button>
+</form>
